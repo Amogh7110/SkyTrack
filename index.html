@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyTrack • Smart Weather</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>🌌 SkyTrack</h1>
+      <p>Live weather & smart forecasts</p>
+    </header>
+
+    <form id="search-form" class="search-bar">
+      <input id="search-input" type="text" placeholder="Search city..." required />
+      <button type="submit">Search</button>
+      <button type="button" id="geo-btn">📍</button>
+    </form>
+
+    <div id="saved-cities" class="saved-cities"></div>
+
+    <div id="empty-state" class="empty-state">
+      <div class="welcome-icon">🌤️</div>
+      <h3>Welcome to SkyTrack</h3>
+      <p>Search for a city to see the 7-day forecast.</p>
+    </div>
+
+    <div id="loader" class="loader hidden"></div>
+
+    <section id="weather-card" class="weather-card hidden">
+      <div class="weather-main">
+        <div class="loc-data">
+          <h2 id="location-name"></h2>
+          <p id="local-time" class="muted"></p>
+        </div>
+        <div class="temp-block">
+          <img id="weather-icon" src="" alt="Icon" />
+          <span id="temp" class="temp"></span>
+          <p id="condition"></p>
+        </div>
+      </div>
+
+      <div class="tab-nav">
+        <button id="btn-hourly" class="tab-btn active">Hourly Chart</button>
+        <button id="btn-forecast" class="tab-btn">7-Day Forecast</button>
+      </div>
+
+      <div id="hourly-section" class="tab-content">
+        <canvas id="hourlyChart"></canvas>
+      </div>
+
+      <div id="forecast-section" class="tab-content hidden">
+        <div id="forecast-list" class="forecast-list"></div>
+      </div>
+
+      <div class="weather-details">
+        <div class="detail-item"><p>Humidity</p><span id="humidity"></span></div>
+        <div class="detail-item"><p>Wind</p><span id="wind"></span></div>
+        <div class="detail-item"><p>Feels Like</p><span id="feels"></span></div>
+        <div class="detail-item"><p>UV Index</p><span id="uv"></span></div>
+      </div>
+
+      <div class="aqi-card">
+        <h3>Air Quality</h3>
+        <span id="aqi-label" class="aqi-badge"></span>
+      </div>
+    </section>
+
+    <footer class="app-footer">Powered by WeatherAPI.com</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
